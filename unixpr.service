@@ -1,0 +1,15 @@
+[Unit]
+Description=UnixPR Service
+
+[Service]
+User=root
+WorkingDirectory=/usr/local/bin
+LimitNOFILE=4096
+ExecStart=/usr/local/bin/unixpr
+Restart=on-failure
+StartLimitInterval=180
+StartLimitBurst=30
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
